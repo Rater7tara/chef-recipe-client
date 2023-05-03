@@ -28,6 +28,10 @@ import Recipes from "../Pages/Recipe/Recipe/Recipes";
                 element: <Blog></Blog>
             },
             {
+                path: '/Recipes',
+                element: <Recipes></Recipes>
+            },
+            {
                 path: '/chefs/:id',
                 element: <Chefs></Chefs>,
                 loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
@@ -40,8 +44,8 @@ import Recipes from "../Pages/Recipe/Recipe/Recipes";
         children: [
             {
                 path: ':id',
-                element: <Recipes></Recipes>
-
+                element: <Recipes></Recipes>,
+                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
             }
         ]
     }

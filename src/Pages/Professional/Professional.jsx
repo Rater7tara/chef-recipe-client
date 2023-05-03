@@ -1,9 +1,10 @@
 import React from 'react';
+import Chefs from '../Chefs/Chefs';
 
 const Professional = () => {
     return (
         <div>
-            <h1>profe</h1>
+            <Chefs></Chefs>
         </div>
     );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Button, Container } from 'react-bootstrap';
 import { FcLike, FcGraduationCap, FcReading } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
-  const { picture, name, likes, years_of_experience, num_recipes } = chef;
+  const { picture, name, likes, years_of_experience, num_recipes, id } = chef;
 
   return (
       <Card style={{ width: '22rem', height: '30rem' }} className='mx-auto pt-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
@@ -19,7 +20,7 @@ const Chef = ({ chef }) => {
 
           <p><FcLike/> {chef.likes} Likes</p>
         </Card.Text>
-        <Button variant="success">View Recipes</Button>
+        <Link to={`/chefs/${chef.id}`}>View Recipes</Link>
       </Card.Body>
     </Card>
   );
