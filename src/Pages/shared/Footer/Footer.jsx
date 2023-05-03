@@ -10,11 +10,11 @@ const Footer = () => {
             <div className='text-center'>
                 <img className='logo' src={logo} alt="" />
             </div>
-            <div class="container">
-                <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-5 border-top">
-                    <div class="col mb-3">
+            <div className="container">
+                <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-5 border-top">
+                    <div className="col mb-3">
                         <h2>Bon Appetit</h2>
-                        <ul class="nav flex-column">
+                        <ul className="nav flex-column">
                             <Link className='nv-a mt-2' to='/'>Home</Link>
                             <Link className='nv-a mt-4' to="/Professional">Professionals</Link>
                             <Link className='nv-a mt-4' to="/Blog">Blog</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
                             - Giada De Laurentiis</p>
                     </div>
 
-                    <div class="col mb-3">
+                    <div className="col mb-3">
                         <h2>Category</h2>
                         <ButtonGroup vertical >
                             <Button variant="outline-success" className='fs-5 fw-bold'>Fresh fish</Button>
@@ -40,7 +40,7 @@ const Footer = () => {
                         </ButtonGroup>
                     </div>
 
-                    <div class="col mb-3">
+                    <div className="col mb-3">
                         <h2>Contact Us</h2>
                         <div className='d-flex'>
                             <input type="email" name="Email" id="" placeholder='Email' className='' />
@@ -48,10 +48,10 @@ const Footer = () => {
                                 <FaTelegramPlane />
                             </Button>
                         </div>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Office #3 First Floor Dogar Arcade, DHA Main Boulevard,uk.</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">nowshinkhan@gmail.com</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">+91 (42)3 123 4567</a></li>
+                        <ul className="nav flex-column">
+                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Office #3 First Floor Dogar Arcade, DHA Main Boulevard,uk.</a></li>
+                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">nowshinkhan@gmail.com</a></li>
+                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">+91 (42)3 123 4567</a></li>
                         </ul>
                         <div className=''>
                             <Link className='ms-4 fs-2 text-dark'>
