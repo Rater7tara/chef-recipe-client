@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
 import Chef from '../Chef/Chef';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -15,8 +14,6 @@ const Chefs = () => {
             .then(data => setChefs(data))
             .catch(error => console.error(error))
     }, [])
-    // const {id} = useParams();
-    // const selectedChefs = useLoaderData();
 
 
     return (

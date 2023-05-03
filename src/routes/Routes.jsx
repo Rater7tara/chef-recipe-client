@@ -28,27 +28,27 @@ import Recipes from "../Pages/Recipe/Recipe/Recipes";
                 element: <Blog></Blog>
             },
             {
-                path: '/Recipes',
-                element: <Recipes></Recipes>
-            },
-            {
-                path: '/chefs/:id',
-                element: <Chefs></Chefs>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
-            }
-        ]
-    },
-    {
-        path:'recipe',
-        element: <RecipeLayout></RecipeLayout>,
-        children: [
-            {
                 path: ':id',
                 element: <Recipes></Recipes>,
                 loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+            },
+            {
+                path: '/chefs/:id',
+                element: <Chefs></Chefs>
             }
         ]
-    }
+    },
+    // {
+    //     path:'recipe',
+    //     element: <RecipeLayout></RecipeLayout>,
+    //     children: [
+    //         {
+    //             path: ':id',
+    //             element: <Recipes></Recipes>,
+                
+    //         }
+    //     ]
+    // }
   ])
 
   export default router;

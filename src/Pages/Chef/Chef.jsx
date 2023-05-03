@@ -20,7 +20,7 @@ const Chef = ({ chef }) => {
 
           <p><FcLike/> {chef.likes} Likes</p>
         </Card.Text>
-        <Link to={`/chefs/${chef.id}`}>View Recipes</Link>
+        <Link className='btn btn-success' to={`/chefs/${chef.id}`}>View Recipes</Link>
       </Card.Body>
     </Card>
   );
