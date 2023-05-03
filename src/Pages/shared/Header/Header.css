@@ -17,4 +17,6 @@
 .car-img{
     height: 90vh;
     width: 100%;
+    filter: blur(2px);
+  -webkit-filter: blur(1.5px);
 }

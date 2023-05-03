@@ -44,8 +44,9 @@ const Header = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h1></h1>
+                            <h3>FAST-TRACK YOUR</h3>
+                            <h2>CAREER FROM HOME COOK</h2>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
