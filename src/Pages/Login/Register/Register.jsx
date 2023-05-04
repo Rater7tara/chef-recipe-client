@@ -14,6 +14,14 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password)
+        createUser(email, password)
+        .then(result => {
+            const createdUser = result.user;
+            console.log(createdUser);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
     }
     return (
         <Container className='w-25 mx-auto'>
