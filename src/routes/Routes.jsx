@@ -58,26 +58,6 @@ import LoginLayout from "../layout/LoginLayout";
                 element: <Chefs></Chefs>
             }
         ]
-    },
-    {
-        path: 'login',
-        element: <LoginLayout></LoginLayout>,
-        children: [
-            {
-                path: '/login',
-                element: <Login></Login>
-            }
-        ]
-    },
-    {
-        path: 'register',
-        element: <LoginLayout></LoginLayout>,
-        children: [
-        {
-            path: '/register',
-            element: <Register></Register>
-        }
-        ]
     }
   ])
 
