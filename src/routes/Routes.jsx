@@ -57,10 +57,6 @@ import RecipeDetails from "../Pages/Recipe/RecipeDetails/RecipeDetails";
                 element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
             },
-            {
-                path: '/RecipeDetails',
-                element: <RecipeDetails></RecipeDetails>
-            },
             
         ]
     }

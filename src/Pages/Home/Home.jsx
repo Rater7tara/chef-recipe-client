@@ -5,6 +5,8 @@ import car4 from '../../assets/car4.jpg'
 import car2 from '../../assets/car2.jpg'
 import { Button } from 'react-bootstrap';
 import Chefs from '../Chefs/Chefs';
+import Food from '../Food/Food';
+import Dish from '../Dish/Dish';
 
 const Home = () => {
     return (
@@ -51,9 +53,15 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
+            
+            <div>
+                <Food></Food>
+            </div>
             <div>
                 <Chefs></Chefs>
+                <Dish></Dish>
             </div>
+            
         </div>
     );
 };

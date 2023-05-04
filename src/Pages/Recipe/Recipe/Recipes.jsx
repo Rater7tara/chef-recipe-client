@@ -3,6 +3,7 @@ import { Button, Card, Row, Col } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FcLike, FcGraduationCap, FcReading } from "react-icons/fc";
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
+import { AiOutlineLike } from "react-icons/ai";
 
 const Recipes = () => {
     const chefs = useLoaderData();
@@ -12,6 +13,7 @@ const Recipes = () => {
     console.log(recipe);
     return (
         <div>
+            <h1 className='mt-4 mb-4 text-center text-success  fs-1'>Famous Chef {chefs.name}</h1>
             <div className='container mt-4 mb-4'>
                 <Card style={{ width: '25rem' }}>
                     <Card.Img variant="top" src={chefs.picture} />
@@ -26,12 +28,14 @@ const Recipes = () => {
                         <Card.Text>
                             <h5>Recipes: {chefs.num_recipes}</h5>
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="success"><AiOutlineLike /> Like</Button>
                     </Card.Body>
                 </Card>
             </div>
             <div className='container mt-4'>
+            <h1 className='mt-4 mb-4 text-center text-success  fs-1'>Some Famous Recipes</h1>
                 <Row xs={1} md={3} className="g-4">
+                
 
                 {
                     recipe.map(recipe => <RecipeDetails

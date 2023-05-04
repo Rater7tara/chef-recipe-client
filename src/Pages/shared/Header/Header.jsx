@@ -32,7 +32,6 @@ const Header = () => {
                             <Link className='nv-a' to='/home'><FaHome /> Home</Link>
                             <Link className='nv-a' to="/Professional"><FaGraduationCap /> Professionals</Link>
                             <Link className='nv-a' to="/Blog"><FaBlogger /> Blog</Link>
-                            <Link className='nv-a' to="/RecipeDetails"><FaBlogger /> RecipeDetails</Link>
                         </Nav>
                         <Nav>
                         {
