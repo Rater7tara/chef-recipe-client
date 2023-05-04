@@ -1,4 +1,4 @@
-import {
+import { Navigate,
     createBrowserRouter
   } from "react-router-dom";
 import Main from "../layout/Main";
@@ -8,15 +8,36 @@ import Blog from "../Pages/Blog/Blog";
 import Chefs from "../Pages/Chefs/Chefs";
 import RecipeLayout from "../layout/RecipeLayout";
 import Recipes from "../Pages/Recipe/Recipe/Recipes";
+import Login from "../Pages/Login/Login/Login";
+import Register from "../Pages/Login/Register/Register";
+import LoginLayout from "../layout/LoginLayout";
 
 
   const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main></Main>,
+        element: <LoginLayout></LoginLayout>,
         children: [
             {
                 path: '/',
+                element: <Navigate to="/home"></Navigate> 
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: '/',
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/home',
                 element: <Home></Home>
             },
             {
@@ -38,17 +59,26 @@ import Recipes from "../Pages/Recipe/Recipe/Recipes";
             }
         ]
     },
-    // {
-    //     path:'recipe',
-    //     element: <RecipeLayout></RecipeLayout>,
-    //     children: [
-    //         {
-    //             path: ':id',
-    //             element: <Recipes></Recipes>,
-                
-    //         }
-    //     ]
-    // }
+    {
+        path: 'login',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+            {
+                path: '/login',
+                element: <Login></Login>
+            }
+        ]
+    },
+    {
+        path: 'register',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+        {
+            path: '/register',
+            element: <Register></Register>
+        }
+        ]
+    }
   ])
 
   export default router;
