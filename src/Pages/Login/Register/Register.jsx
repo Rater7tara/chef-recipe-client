@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -18,10 +20,25 @@ const Register = () => {
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+            navigate('/home')
         })
         .catch(error =>{
             console.log(error);
         })
+
+        // validate
+        if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Please add at least one uppercase');
+            return;
+        }
+        else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+            setError('Please add at least two numbers');
+            return
+        }
+        else if (password.length < 6) {
+            setError('Please add at least 6 characters in your password')
+            return;
+        }
     }
     return (
         <Container className='w-25 mx-auto'>

@@ -16,6 +16,27 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        const handleGoogle= () =>{
+            google()
+            .then(result =>{
+                const googleUser = result.user
+                console.log(googleUser)
+            })
+            .catch(error =>{
+                console.log(error.massage)
+            })
+        }
+        // const handleGithub= () =>{
+        //     github()
+        //     .then(result =>{
+        //         const githubUser = result.user
+        //         console.log(githubUser)
+        //     })
+        //     .catch(error =>{
+        //         console.log(error.massage)
+        //     })
+        // }
+
         signIn(email, password)
         .then(result =>{
             const loggedUser = result.user;
@@ -25,6 +46,8 @@ const Login = () => {
         .catch(error =>{
             console.log(error);
         })
+
+
     }
     return (
         <Container className='w-25 mx-auto'>
@@ -53,6 +76,10 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
+            {/* <div>
+                <Button onClick={handleGoogle}>Google SignIn</Button>
+                <Button onClick={handleGithub}>Google SignIn</Button>
+            </div> */}
         </Container>
     );
 };
