@@ -12,12 +12,15 @@ import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import LoginLayout from "../layout/LoginLayout";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import ErrorPage from "../layout/ErrorPage";
+import RecipeDetails from "../Pages/Recipe/RecipeDetails/RecipeDetails";
 
 
   const router = createBrowserRouter([
     {
         path: '/',
         element: <LoginLayout></LoginLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -50,14 +53,15 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
                 element: <Blog></Blog>
             },
             {
-                path: ':id',
-                element: <PrivateRoute> <Recipes></Recipes></PrivateRoute> ,
+                path: '/chefs/:id',
+                element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
             },
             {
-                path: '/chefs/:id',
-                element: <Chefs></Chefs>
-            }
+                path: '/RecipeDetails',
+                element: <RecipeDetails></RecipeDetails>
+            },
+            
         ]
     }
   ])
