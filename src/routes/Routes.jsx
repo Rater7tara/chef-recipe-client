@@ -11,6 +11,7 @@ import Recipes from "../Pages/Recipe/Recipe/Recipes";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import LoginLayout from "../layout/LoginLayout";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -42,7 +43,7 @@ import LoginLayout from "../layout/LoginLayout";
             },
             {
                 path: '/Professional',
-                element: <Professional></Professional>
+                element: <PrivateRoute><Professional></Professional></PrivateRoute>
             },
             {
                 path: '/Blog',
@@ -50,7 +51,7 @@ import LoginLayout from "../layout/LoginLayout";
             },
             {
                 path: ':id',
-                element: <Recipes></Recipes>,
+                element: <PrivateRoute> <Recipes></Recipes></PrivateRoute> ,
                 loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
             },
             {
