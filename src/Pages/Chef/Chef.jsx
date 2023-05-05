@@ -3,6 +3,7 @@ import { Card, Button, Container } from 'react-bootstrap';
 import { FcLike, FcGraduationCap, FcReading } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
+
 const Chef = ({ chef }) => {
   const { picture, name, likes, years_of_experience, num_recipes, id } = chef;
 
@@ -13,14 +14,15 @@ const Chef = ({ chef }) => {
       <Card.Body>
         <div className=''>
           <Card.Title><FcGraduationCap /> {chef.years_of_experience} + Years of Experience </Card.Title>
+
           <Card.Title><FcReading /> {chef.num_recipes} + Recipes</Card.Title>
         </div>
 
         <Card.Text>
 
-          <p><FcLike/> {chef.likes} Likes</p>
+          <FcLike/> {chef.likes} Likes
         </Card.Text>
-        <Link className='btn btn-success' to={`/chefs/${chef.id}`}>View Recipes</Link>
+        <Link  className='btn btn-success' to={`/chefs/${chef.id}`}>View Recipes</Link>
       </Card.Body>
     </Card>
   );

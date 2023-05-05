@@ -36,7 +36,7 @@ const Login = () => {
             .then(result =>{
                 const googleUser = result.user;
                 console.log(googleUser);
-                navigate('/home');
+
             })
             .catch(error =>{
                 console.log(error.massage)
@@ -68,7 +68,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Button variant="success" type="submit">
+                <Button className='mb-2' variant="success" type="submit">
                     Login <FaAngleRight className='fs-4'/>
                 </Button>
                 <br />
@@ -82,7 +82,7 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
-            <div ClassName='d-flex mt-4'>
+            <div className='d-flex mt-4'>
                 <Button variant="success" className='me-2 mt-4' onClick={google}><FaGoogle className='fs-3' /> Sign In</Button>
                 <Button className='me-2 mt-4' variant="success" onClick={handleGithubSignIn}> <FaGithub className='fs-3'/> Sign In</Button>
             </div>

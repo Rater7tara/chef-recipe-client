@@ -4,7 +4,7 @@ import Chefs from '../Chefs/Chefs';
 const Professional = () => {
     return (
         <div>
-            {/* <Chefs></Chefs> */}
+            <Chefs></Chefs>
         </div>
     );
 };
