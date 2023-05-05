@@ -9,7 +9,7 @@ const Chefs = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/chefs/0')
+        fetch('https://chef-recipe-server-rouge-six.vercel.app/chefs/0')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.error(error))

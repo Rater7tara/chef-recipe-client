@@ -12,14 +12,14 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
-        .then()
-        .catch(error => console.log(error))
+            .then()
+            .catch(error => console.log(error))
     }
-    
+
     return (
         <>
             <Navbar sticky="top" collapseOnSelect expand="lg" bg="light" variant="light">
@@ -34,8 +34,9 @@ const Header = () => {
                             <Link className='nv-a' to="/Blog"><FaBlogger /> Blog</Link>
                         </Nav>
                         <Nav>
-                        {
-                                user && <FaUser style={{ fontSize: '2rem' }}></FaUser>
+                            {
+            
+                             user?.photoURL ?<img src={user.photoURL} className="rounded-circle w-25 me-2 " alt=""  data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} />:<FaUser className='rounded-circle fs-4 mt-2 me-3'></FaUser>
                             }
 
                             {user ?
@@ -48,7 +49,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            
+
         </>
     );
 };

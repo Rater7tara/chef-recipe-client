@@ -55,7 +55,7 @@ import RecipeDetails from "../Pages/Recipe/RecipeDetails/RecipeDetails";
             {
                 path: '/chefs/:id',
                 element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://chef-recipe-server-rouge-six.vercel.app/chefs/${params.id}`)
             },
             
         ]

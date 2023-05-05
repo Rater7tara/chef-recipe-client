@@ -4,18 +4,21 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { user, createUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
+
+
         const form = event.target;
         const name = form.name.value;          
         const photo = form.photo.value;          
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password)
+        console.log(name, photo, email, password);
+
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
@@ -61,10 +64,7 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" name="accept" label="Accept Terms and Conditions" />
-                </Form.Group>
+                
                 <Button variant="success" type="submit">
                     Register
                 </Button>

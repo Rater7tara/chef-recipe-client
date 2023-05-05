@@ -4,51 +4,56 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+
     const navigate = useNavigate();
     // const location = useLocation();
     // console.log('login page location', location)
 
     const handleLogin = event =>{
         event.preventDefault();
+
         const form = event.target;         
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
 
-        const handleGoogle= () =>{
-            google()
-            .then(result =>{
-                const googleUser = result.user
-                console.log(googleUser)
-            })
-            .catch(error =>{
-                console.log(error.massage)
-            })
-        }
-        // const handleGithub= () =>{
-        //     github()
-        //     .then(result =>{
-        //         const githubUser = result.user
-        //         console.log(githubUser)
-        //     })
-        //     .catch(error =>{
-        //         console.log(error.massage)
-        //     })
-        // }
-
         signIn(email, password)
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
-            navigate('/home')
+            navigate('/home');
         })
         .catch(error =>{
             console.log(error);
         })
 
+}
 
-    }
+        const google=()=> {
+            signInWithGoogle()
+            .then(result =>{
+                const googleUser = result.user;
+                console.log(googleUser);
+                navigate('/home');
+            })
+            .catch(error =>{
+                console.log(error.massage)
+            })
+        }
+        const handleGithubSignIn= () =>{
+            signInWithGithub()
+            .then(result =>{
+                const githubUser = result.user;
+                console.log(githubUser);
+                navigate('/home');
+            })
+            .catch(error =>{
+                console.log(error.massage)
+            })
+        }
+
+    
     return (
         <Container className='w-25 mx-auto'>
             <h3 className='text-success'>Please Login</h3>
@@ -76,10 +81,10 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
-            {/* <div>
-                <Button onClick={handleGoogle}>Google SignIn</Button>
-                <Button onClick={handleGithub}>Google SignIn</Button>
-            </div> */}
+            <div ClassName='d-flex'>
+                <Button onClick={google}>Google SignIn</Button>
+                <Button onClick={handleGithubSignIn}>Github SignIn</Button>
+            </div>
         </Container>
     );
 };
