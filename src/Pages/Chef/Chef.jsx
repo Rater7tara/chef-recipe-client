@@ -7,13 +7,13 @@ const Chef = ({ chef }) => {
   const { picture, name, likes, years_of_experience, num_recipes, id } = chef;
 
   return (
-      <Card style={{ width: '22rem', height: '30rem' }} className='mx-auto pt-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
-      <Card.Img className='w-75 h-50 mx-auto' variant="top" src={chef.picture} />
+      <Card style={{ width: '22rem', height: '32rem' }} className='mx-auto pt-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
+      <Card.Img className='w-100 h-50 mx-auto' variant="top" src={chef.picture} />
       <Card.Header as="h5">{chef.name}</Card.Header>
       <Card.Body>
         <div className=''>
-          <Card.Title><FcGraduationCap /> Years of experience: {chef.years_of_experience} Years</Card.Title>
-          <Card.Title><FcReading /> Numbers of recipes: {chef.num_recipes}</Card.Title>
+          <Card.Title><FcGraduationCap /> {chef.years_of_experience} + Years of Experience </Card.Title>
+          <Card.Title><FcReading /> {chef.num_recipes} + Recipes</Card.Title>
         </div>
 
         <Card.Text>

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineLike } from "react-icons/ai";
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 
 const RecipeDetails = ({ recipe }) => {
     const { picture, name, cooking_method, ingredients, rating, id } = recipe;
@@ -28,7 +30,7 @@ const RecipeDetails = ({ recipe }) => {
                     <Card.Body>
                         <Card.Title><h2 className='fw-bold'>{recipe.name}</h2></Card.Title>
                         <Card.Text>
-                            <p>Ratings: {rating}</p>
+                            <h5 className="d-flex"><Rating style={{ maxWidth: 120 }} value={rating} readOnly />{rating}</h5>
                         </Card.Text>
                         <Card.Text>
                             <h5 className='text-muted'>(Ingredients: {recipe.ingredients})</h5>
@@ -37,7 +39,7 @@ const RecipeDetails = ({ recipe }) => {
                         
 
                     </Card.Body>
-                    <button onClick={notify} disabled={like} className="btn btn-success"><AiOutlineLike className='fs-4 me-2'></AiOutlineLike>
+                    <button onClick={notify} disabled={like} className="btn btn-success"><AiOutlineLike className='fs-4 me-2 mb-1'></AiOutlineLike>
                       {
                          like ?
                          "Liked"

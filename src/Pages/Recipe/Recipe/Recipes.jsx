@@ -18,17 +18,17 @@ const Recipes = () => {
                 <Card style={{ width: '25rem' }}>
                     <Card.Img variant="top" src={chefs.picture} />
                     <Card.Body>
-                        <Card.Title>{chefs.name} <p className='text-muted'>(<FcLike />{chefs.likes})</p></Card.Title>
+                        <Card.Title>{chefs.name} <p className='text-muted'>(<FcLike className='fs-4 me-2'/>{chefs.likes})</p></Card.Title>
                         <Card.Text>
                             {chefs.bio}
                         </Card.Text>
                         <Card.Text>
-                            <h5>Experience: {chefs.years_of_experience} Years</h5>
+                            <h5><FcGraduationCap className='fs-3' /> Experience: {chefs.years_of_experience} Years+</h5>
                         </Card.Text>
                         <Card.Text>
-                            <h5>Recipes: {chefs.num_recipes}</h5>
+                            <h5><FcReading className='fs-3'/> Recipes: {chefs.num_recipes}+</h5>
                         </Card.Text>
-                        <Button variant="success"><AiOutlineLike /> Like</Button>
+                        <Button className='fs-5' variant="success"><AiOutlineLike className='fs-4 me-2 mb-1'/>Like</Button>
                     </Card.Body>
                 </Card>
             </div>

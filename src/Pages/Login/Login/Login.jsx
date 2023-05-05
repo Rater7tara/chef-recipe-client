@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaGithub, FaGoogle, FaAngleRight } from "react-icons/fa";
 
 const Login = () => {
     const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
@@ -55,8 +56,8 @@ const Login = () => {
 
     
     return (
-        <Container className='w-25 mx-auto'>
-            <h3 className='text-success'>Please Login</h3>
+        <Container className='w-25 mx-auto mt-4'>
+            <h2 className='text-success'>Please Login</h2>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -68,7 +69,7 @@ const Login = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Button variant="success" type="submit">
-                    Login
+                    Login <FaAngleRight className='fs-4'/>
                 </Button>
                 <br />
                 <Form.Text className="text-secondary">
@@ -81,9 +82,9 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
-            <div ClassName='d-flex'>
-                <Button onClick={google}>Google SignIn</Button>
-                <Button onClick={handleGithubSignIn}>Github SignIn</Button>
+            <div ClassName='d-flex mt-4'>
+                <Button variant="success" className='me-2 mt-4' onClick={google}><FaGoogle className='fs-3' /> Sign In</Button>
+                <Button className='me-2 mt-4' variant="success" onClick={handleGithubSignIn}> <FaGithub className='fs-3'/> Sign In</Button>
             </div>
         </Container>
     );
